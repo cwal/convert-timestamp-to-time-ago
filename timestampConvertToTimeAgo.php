@@ -34,9 +34,9 @@
 				if ((($k == 'i' || $k == 's') && $result == '') && $accuracy == 1) {
 					if (LANG == 'en') {
 						$result = 'moments';
-          } else {
+          				} else {
 						$result = 'quelques instants';
-          }
+          				}
 				}
 				
 				// if accuracy is 1 and its been an hour
@@ -64,7 +64,7 @@
 				// add a space between periods 
 				if ($accuracy > 1) {
 					$result .= ' ';
-        }
+        			}
 				
 				$i++;
 					
@@ -80,9 +80,9 @@
 		if ($d1 == $d2) {
 			if (LANG == 'en') {
 				$result = 'just now';
-      } else {
+      			} else {
 				$result = 'juste maintenant';
-      }
+      			}
 		}
 		// if we have a string in result append the ago/future
 		elseif ($result) {
@@ -90,19 +90,19 @@
 			if ($diff->invert == 0) {
 				if (LANG == 'en') {
 					$result = $result . ' in the future';
-        } else {
+        			} else {
 					$result = $result . ' dans le future';
-        }
+        			}
 			} else {
 				if (LANG == 'en') {
 					$result = $result . ' ago';
-        } else {
+        			} else {
 					$result = 'il y a ' . $result;
-        }
+        			}
 			}
 		} else {
 			$result = 'undefined'; // fallback if everything fails
-    }
+    		}
 		
 		return $result;
 	}
